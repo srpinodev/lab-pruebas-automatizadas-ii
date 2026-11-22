@@ -1,0 +1,80 @@
+[
+  {
+    "hora": "13:11:03",
+    "min": "0.0",
+    "exp": "Preparación: semilla limpia, admin y operador en contextos separados",
+    "obs": "CAB-USB-01=40, MON-24-04=3, historial con 2 movimientos semilla"
+  },
+  {
+    "hora": "13:11:03",
+    "min": "0.0",
+    "exp": "Reconstruir el stock de la semilla desde el historial",
+    "obs": "Historial: CAB-USB-01 IN 50; CAB-USB-01 OUT 10. Solo CAB-USB-01 tiene movimientos (50−10=40 cuadra). MOU, TEC, MON y AUD tienen stock sin ningún movimiento que lo explique"
+  },
+  {
+    "hora": "13:11:03",
+    "min": "0.0",
+    "exp": "Cantidad 0.5: en la UI y por API (OUT sobre CAB-USB-01)",
+    "obs": "UI lo bloquea (\"Value must be greater than or equal to 1.\"). API responde 201 y el stock queda en 39.5: el backend acepta fracciones de un producto que se cuenta por unidad"
+  },
+  {
+    "hora": "13:11:03",
+    "min": "0.0",
+    "exp": "IN de 99.999.999.999 sobre TEC-MEC-03 (API)",
+    "obs": "Responde 201, stock 100000000021. No hay tope de cantidad; el dashboard muestra $ 18.900.000.006.643"
+  },
+  {
+    "hora": "13:11:04",
+    "min": "0.0",
+    "exp": "ADJUST con conteo físico 0 (UI y API)",
+    "obs": "UI: \"Value must be greater than or equal to 1.\". API: 400 \"Cantidad debe ser mayor a 0\". No hay forma de registrar que el conteo dio 0 unidades, aunque RF-04 dice que ADJUST deja el stock en el valor contado"
+  },
+  {
+    "hora": "13:11:04",
+    "min": "0.1",
+    "exp": "ADJUST de MON-24-04 al mismo valor que tiene (3)",
+    "obs": "El stock pasó a 6. Un conteo que coincide con el sistema duplica el stock"
+  },
+  {
+    "hora": "13:11:05",
+    "min": "0.1",
+    "exp": "Doble clic rápido en Registrar (OUT 1 sobre CAB-USB-01)",
+    "obs": "Movimientos 6 → 8; stock 39.5 → 37.5. Se duplicó el movimiento"
+  },
+  {
+    "hora": "13:11:08",
+    "min": "0.1",
+    "exp": "Admin y operador registran OUT 2 al mismo tiempo sobre MON-24-04",
+    "obs": "Stock antes 7, después 3. Ninguno de los dos recibió aviso; el selector muestra el stock del momento en que se abrió el formulario"
+  },
+  {
+    "hora": "13:11:09",
+    "min": "0.1",
+    "exp": "Operador con formulario abierto mientras el admin elimina el producto",
+    "obs": "Al registrar aparece \"Producto no encontrado\". El backend lo rechaza bien (404)"
+  },
+  {
+    "hora": "13:11:13",
+    "min": "0.2",
+    "exp": "Secuencia de 7 movimientos sobre CAB-USB-01 (inicio 37.5) con cuadre a mano",
+    "obs": "IN 10: esperado 47.5, visto 47.5 | OUT 4: esperado 43.5, visto 43.5 | ADJUST 30: esperado 30, visto 73.5 | OUT 3: esperado 27, visto 70.5 | IN 2: esperado 29, visto 72.5 | ADJUST 25: esperado 25, visto 97.5 | OUT 1: esperado 24, visto 96.5. Desde el primer ADJUST el historial ya no explica el stock"
+  },
+  {
+    "hora": "13:11:14",
+    "min": "0.2",
+    "exp": "Motivo de 500 caracteres con tildes, ñ y emoji",
+    "obs": "Se guardó 500 caracteres, igual al enviado = true. La tabla lo muestra completo y la fila crece en alto (sin límite ni recorte)"
+  },
+  {
+    "hora": "13:11:14",
+    "min": "0.2",
+    "exp": "Eliminar CAB-USB-01 con todo su historial",
+    "obs": "Se elimina sin advertencia. Quedan 12 movimientos como \"(producto eliminado)\" con SKU \"—\": ya no se sabe qué se entregó"
+  },
+  {
+    "hora": "13:11:14",
+    "min": "0.2",
+    "exp": "Cierre de sesión",
+    "obs": "Ver resumen en mision_a_notas.md"
+  }
+]

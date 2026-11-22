@@ -1,0 +1,62 @@
+[
+  {
+    "id": "TC-LOG-01",
+    "resultado": "Pass",
+    "observado": "Dashboard visible, chip \"Ana Admin · admin\", \"+ Producto\" visible",
+    "evidencia": "01_TC-LOG-01.png"
+  },
+  {
+    "id": "TC-DAS-01",
+    "resultado": "Fail",
+    "observado": "Activos 5, Stock bajo 3, Agotados 1, Movimientos 2 (correctos). Valor inventario $ 6.841; esperado $ 6.841.200",
+    "evidencia": "02_TC-DAS-01.png"
+  },
+  {
+    "id": "TC-CSV-01",
+    "resultado": "Fail",
+    "observado": "5 productos en pantalla; el CSV trae 3 filas (faltan MON-24-04 y AUD-BT-05). Suma price×stock del CSV = 5.281.200, esperado 6.841.200",
+    "evidencia": "03_TC-CSV-01.png, 03_TC-CSV-01_inventario.csv"
+  },
+  {
+    "id": "TC-SEG-01",
+    "resultado": "Pass",
+    "observado": "Sin \"+ Producto\"; Editar = 0, Eliminar = 0 en las 5 filas",
+    "evidencia": "04_TC-SEG-01.png"
+  },
+  {
+    "id": "TC-SEG-02",
+    "resultado": "Pass",
+    "observado": "POST 403, PUT 403, DELETE 403 (\"Solo admin puede realizar esta acción\"). Siguen 5 productos y TEC-MEC-03 en 189.000",
+    "evidencia": "05_TC-SEG-02_respuestas_api.json"
+  },
+  {
+    "id": "TC-MOV-01",
+    "resultado": "Pass",
+    "observado": "CAB-USB-01 pasó de 40 a 55; primera fila de Movimientos: \"22/11/2026, 1:09:47 p. m. CAB-USB-01 Cable USB-C 1m IN 15 Compra OC-2026-118 admin\"",
+    "evidencia": "06_TC-MOV-01.png"
+  },
+  {
+    "id": "TC-NEG-01",
+    "resultado": "Fail",
+    "observado": "Sin mensaje de rechazo. A: MON-24-04 quedó en -1 (esperado 3). B: AUD-BT-05 quedó en -1 (esperado 0). Movimientos pasó de 4 a 6",
+    "evidencia": "07_TC-NEG-01.png"
+  },
+  {
+    "id": "TC-MOV-04",
+    "resultado": "Fail",
+    "observado": "A: conteo 20 sobre 22 → TEC-MEC-03 quedó en 42. B (operador): conteo 12 sobre 8 → MOU-WL-02 quedó en 20. ADJUST suma en vez de fijar",
+    "evidencia": "08a_TC-MOV-04_filaA_admin.png, 08b_TC-MOV-04_filaB_operador.png"
+  },
+  {
+    "id": "TC-NEG-02",
+    "resultado": "Fail",
+    "observado": "Sin mensaje de error; quedaron 2 productos con SKU CAB-USB-01. El original sigue en $ 18.900 y stock 55",
+    "evidencia": "09_TC-NEG-02.png"
+  },
+  {
+    "id": "TC-SEG-03",
+    "resultado": "Fail",
+    "observado": "<img onerror> se ejecutó: 1 alert(s) al guardar como admin y 1 al entrar el operador (título cambiado a \"XSS ejecutado\"). Control: el <script> de la IA dio 0 alertas",
+    "evidencia": "10a/10b/10c_TC-SEG-03*.png"
+  }
+]

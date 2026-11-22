@@ -1,0 +1,8 @@
+{
+  "post": 403,
+  "put": 403,
+  "del": 403,
+  "msg": "Solo admin puede realizar esta acción",
+  "total": 5,
+  "precioTec": 189000
+}
