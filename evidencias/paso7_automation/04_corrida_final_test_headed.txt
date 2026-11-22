@@ -1,0 +1,21 @@
+﻿
+> stockpascual-automation@1.0.0 test:headed
+> playwright test --headed
+
+
+Running 10 tests using 1 worker
+
+(node:38212) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests\e2e-stock-in-out-alerta.spec.ts:110:3 › E2E inventario: alta → IN → OUT → stock → alerta › el stock refleja IN y OUT, y aparece en Alertas si queda ≤ mínimo (2.2s)
+  ✓   2 tests\stockpascual-criterios.spec.ts:58:3 › Criterios de aceptación de StockPascual › TC-SEG-02 · el operador no crea, edita ni elimina productos por API (CA9) (52ms)
+  ✘   3 tests\stockpascual-criterios.spec.ts:67:3 › Criterios de aceptación de StockPascual › TC-DAS-01 · el valor del inventario es Σ stock × precio (CA7) — BUG-03 (6.2s)
+  ✘   4 tests\stockpascual-criterios.spec.ts:79:3 › Criterios de aceptación de StockPascual › TC-NEG-01 · una salida mayor al stock se rechaza (CA1) — BUG-01 (1.4s)
+  ✘   5 tests\stockpascual-criterios.spec.ts:90:3 › Criterios de aceptación de StockPascual › TC-MOV-04 · ADJUST deja el stock en el valor contado (CA4) — BUG-02 (6.3s)
+  ✘   6 tests\stockpascual-criterios.spec.ts:99:3 › Criterios de aceptación de StockPascual › TC-NEG-02 · no se permite un SKU duplicado (CA2) — BUG-06 (20ms)
+  ✘   7 tests\stockpascual-criterios.spec.ts:108:3 › Criterios de aceptación de StockPascual › TC-SEG-03 · un nombre con HTML no ejecuta código (CA10) — BUG-04 (1.2s)
+  ✘   8 tests\stockpascual-criterios.spec.ts:125:3 › Criterios de aceptación de StockPascual › TC-CSV-01 · el CSV exporta todos los productos (CA6) — BUG-05 (1.5s)
+  ✓   9 tests\stockpascual-smoke.spec.ts:7:1 › login admin y ver dashboard (1.1s)
+  ✓  10 tests\stockpascual-smoke.spec.ts:17:1 › operador no ve botón + Producto (1.1s)
+
+  10 passed (23.0s)

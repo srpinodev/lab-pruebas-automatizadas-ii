@@ -1,0 +1,6 @@
+
+Running 1 test using 1 worker
+
+  ✓  1 tests\e2e-stock-in-out-alerta.spec.ts:110:3 › E2E inventario: alta → IN → OUT → stock → alerta › el stock refleja IN y OUT, y aparece en Alertas si queda ≤ mínimo (1.5s)
+
+  1 passed (2.3s)

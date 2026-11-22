@@ -1,0 +1,44 @@
+
+Running 1 test using 1 worker
+
+  ✘  1 tests\e2e-stock-in-out-alerta.spec.ts:108:3 › E2E inventario: alta → IN → OUT → stock → alerta › el stock refleja IN y OUT, y aparece en Alertas si queda ≤ mínimo (6.2s)
+
+
+  1) tests\e2e-stock-in-out-alerta.spec.ts:108:3 › E2E inventario: alta → IN → OUT → stock → alerta › el stock refleja IN y OUT, y aparece en Alertas si queda ≤ mínimo › 3) Registrar IN de 12 
+
+    Error: Debe existir una sola opción para E2E-1795371490318-0
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('#movement-dialog').getByLabel('Producto', { exact: true }).locator('option').filter({ hasText: /^\s*E2E-1795371490318-0\s+—/ })
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Debe existir una sola opción para E2E-1795371490318-0 locator('#movement-dialog').getByLabel('Producto', { exact: true }).locator('option').filter({ hasText: /^\s*E2E-1795371490318-0\s+—/ }) with timeout 5000ms
+      - waiting for locator('#movement-dialog').getByLabel('Producto', { exact: true }).locator('option').filter({ hasText: /^\s*E2E-1795371490318-0\s+—/ })
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+      52 | async function seleccionarProducto(select: Locator, sku: string) {
+      53 |   const opcion = select.locator('option').filter({ hasText: new RegExp(`^\\s*${sku}\\s+—`) });
+    > 54 |   await expect(opcion, `Debe existir una sola opción para ${sku}`).toHaveCount(1); // espera a que cargue el catálogo
+         |                                                                    ^
+      55 |   const valor = await opcion.getAttribute('value');
+      56 |   await select.selectOption(valor ?? { label: (await opcion.textContent())!.trim() });
+      57 | }
+        at seleccionarProducto (C:\Users\spino\Documents\lab-pruebas-automatizadas-ii\automation\tests\e2e-stock-in-out-alerta.spec.ts:54:68)
+        at registrarMovimiento (C:\Users\spino\Documents\lab-pruebas-automatizadas-ii\automation\tests\e2e-stock-in-out-alerta.spec.ts:70:9)
+        at C:\Users\spino\Documents\lab-pruebas-automatizadas-ii\automation\tests\e2e-stock-in-out-alerta.spec.ts:163:7
+        at C:\Users\spino\Documents\lab-pruebas-automatizadas-ii\automation\tests\e2e-stock-in-out-alerta.spec.ts:162:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\e2e-stock-in-out-alerta-E2-bb5ba-n-Alertas-si-queda-≤-mínimo\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\e2e-stock-in-out-alerta-E2-bb5ba-n-Alertas-si-queda-≤-mínimo\error-context.md
+
+  1 failed
+    tests\e2e-stock-in-out-alerta.spec.ts:108:3 › E2E inventario: alta → IN → OUT → stock → alerta › el stock refleja IN y OUT, y aparece en Alertas si queda ≤ mínimo 

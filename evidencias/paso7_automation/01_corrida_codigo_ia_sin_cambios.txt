@@ -1,0 +1,33 @@
+
+Running 1 test using 1 worker
+
+  ✘  1 tests\e2e-stock-in-out-alerta.spec.ts:103:3 › E2E inventario: alta → IN → OUT → stock → alerta › el stock refleja IN y OUT, y aparece en Alertas si queda ≤ mínimo (1.0m)
+
+
+  1) tests\e2e-stock-in-out-alerta.spec.ts:103:3 › E2E inventario: alta → IN → OUT → stock → alerta › el stock refleja IN y OUT, y aparece en Alertas si queda ≤ mínimo › 2) Crear producto con SKU único 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.fill: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for getByRole('dialog').getByLabel('Precio', { exact: true })
+
+
+      140 |       await form.getByLabel(c.nombre, { exact: true }).fill(producto.nombre);
+      141 |       await llenarOSeleccionar(form.getByLabel(c.categoria, { exact: true }), producto.categoria);
+    > 142 |       await form.getByLabel(c.precio, { exact: true }).fill(String(producto.precio)); // sin separador de miles
+          |                                                        ^
+      143 |       await form.getByLabel(c.stockInicial, { exact: true }).fill(String(producto.stockInicial));
+      144 |       await form.getByLabel(c.stockMinimo, { exact: true }).fill(String(producto.stockMinimo));
+      145 |       await form.getByLabel(c.ubicacion, { exact: true }).fill(producto.ubicacion);
+        at C:\Users\spino\Documents\lab-pruebas-automatizadas-ii\automation\tests\e2e-stock-in-out-alerta.spec.ts:142:56
+        at C:\Users\spino\Documents\lab-pruebas-automatizadas-ii\automation\tests\e2e-stock-in-out-alerta.spec.ts:133:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\e2e-stock-in-out-alerta-E2-bb5ba-n-Alertas-si-queda-≤-mínimo\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\e2e-stock-in-out-alerta-E2-bb5ba-n-Alertas-si-queda-≤-mínimo\error-context.md
+
+  1 failed
+    tests\e2e-stock-in-out-alerta.spec.ts:103:3 › E2E inventario: alta → IN → OUT → stock → alerta › el stock refleja IN y OUT, y aparece en Alertas si queda ≤ mínimo 
