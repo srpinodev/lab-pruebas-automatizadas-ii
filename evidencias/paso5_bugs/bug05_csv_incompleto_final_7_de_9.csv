@@ -1,0 +1,8 @@
+sku,name,category,price,stock,minStock,location
+MOU-WL-02,Mouse inalámbrico,Periféricos,45900,8,15,B-12
+TEC-MEC-03,Teclado mecánico,Periféricos,189000,42,5,B-03
+MON-24-04,Monitor 24" IPS,Pantallas,520000,-7,4,C-01
+AUD-BT-05,Audífonos Bluetooth,Audio,-99000,0,8,A-09
+CAB-USB-01,Cable USB-C 2m,Accesorios,24900,12,5,A-02
+PRY-EPS-06,Proyector Epson,Pantallas,-1500000,-4,2,C-07
+,Kit cables de red,Accesorios,35000,10,3,

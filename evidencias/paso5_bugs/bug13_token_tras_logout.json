@@ -1,0 +1,11 @@
+{
+  "paso1": "Login como operador y copiar sp_token de localStorage",
+  "paso2": "Clic en Cerrar sesión (la UI vuelve al login)",
+  "paso3": "GET /api/products con Authorization: Bearer <token anterior>",
+  "esperado": "401 No autenticado",
+  "actual": {
+    "token_prefijo": "2637a147…",
+    "status": 200,
+    "productos": 5
+  }
+}
