@@ -1,6 +1,6 @@
 # Evaluación crítica del uso de IA — Laboratorio Pruebas Automatizadas II + IA
 
-**Equipo:** Juan Pablo Florez, Linda Maria Perez, Duvan Andres Villadiego
+**Equipo:** Juan Pablo Florez, Linda Maria Perez, Duvan Andres Villadiego, Santiago Pino
 **Herramienta de IA:** Claude (Anthropic), un solo chat para todo el laboratorio, sin acceso al código ni a la app: solo veía lo que le pegábamos.
 **Respuestas crudas:** `evidencias/paso2_riesgos/respuesta_ia_cruda_prompt01.md`, `evidencias/paso3_casos/respuesta_ia_cruda_prompt02.md` y `respuesta_ia_cruda_refino.md`, `evidencias/paso4_ejecucion/respuesta_ia_cruda_prompt03.md`, `evidencias/paso7_automation/respuesta_ia_cruda_prompt04.md` y `respuesta_ia_cruda_depuracion.md`.
 
